@@ -22,6 +22,8 @@ public class KeranjangEdit extends AppCompatActivity {
     AppDatabase mDb;
     TextView mNama;
     KeranjangWithRelations keranjang;
+    Button bPlus;
+    Button bMin;
     int id;
     Intent intent;
     @Override
@@ -31,6 +33,8 @@ public class KeranjangEdit extends AppCompatActivity {
         intent = getIntent();
         id = intent.getIntExtra("update",-1);
         mDb = AppDatabase.getDatabase(getApplicationContext());
+        bPlus = findViewById(R.id.btnTambahKuantiti);
+        bMin = findViewById(R.id.btnKurangKuantiti);
         mNama = findViewById(R.id.labelNamaProdukEdit);
         mKuantiti = findViewById(R.id.etKuantitiEdit);
         mSave = findViewById(R.id.btnSaveKuantitiEdit);
@@ -38,6 +42,20 @@ public class KeranjangEdit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onSubmit();
+            }
+        });
+        bPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(String.valueOf(mKuantiti.getText()));
+                mKuantiti.setText(String.valueOf(jumlah + 1));
+            }
+        });
+        bMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(String.valueOf(mKuantiti.getText()));
+                mKuantiti.setText(String.valueOf(jumlah - 1));
             }
         });
 

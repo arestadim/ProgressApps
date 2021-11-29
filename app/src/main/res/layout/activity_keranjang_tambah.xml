@@ -22,18 +22,57 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
         />
+
+
     <EditText
         android:id="@+id/etKuantitiTambah"
+        android:textAlignment="center"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/labelKuantiti"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_toStartOf="@+id/btnTambahKuantiti"
+        android:layout_toLeftOf="@+id/btnTambahKuantiti"
+        android:paddingTop="10dp"
+        android:text="0"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btnTambahKuantiti"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:background="@color/float_transparent"
+        android:gravity="center"
+        android:onClick="increment"
+        android:text="+"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btnKurangKuantiti"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_toStartOf="@+id/etKuantitiTambah"
+        android:layout_toLeftOf="@+id/etKuantitiTambah"
+        android:background="@color/float_transparent"
+        android:gravity="center"
+        android:onClick="increment"
+        android:text="-"
+        android:textSize="23dp" />
+
     <Button
         android:id="@+id/btnSaveKuantitiTambah"
-        android:layout_below="@+id/etKuantitiTambah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Simpan"
-        android:textColor="#fff"
+        android:layout_below="@+id/etKuantitiTambah"
+        android:background="@drawable/btnstyle"
         android:padding="10dp"
-        android:background="@drawable/btnstyle"/>
+        android:text="Simpan"
+        android:textColor="#fff" />
 </RelativeLayout>

@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:layout_marginLeft="5dp"
         android:textStyle="bold"
         android:textColor="#000"
         android:text="nama_produk"/>
@@ -20,6 +21,7 @@
         android:id="@+id/harga_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/nama_keranjang"
         android:padding="5dp"
         android:text="harga"/>
@@ -31,6 +33,7 @@
         android:layout_below="@+id/nama_keranjang"
         android:layout_toRightOf="@id/harga_keranjang"
         android:padding="5dp"
+        android:layout_marginLeft="5dp"
         android:text="x"
         android:textColor="#000"/>
 
@@ -40,6 +43,7 @@
         android:id="@+id/qty_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/x"
         android:padding="5dp"
         android:text="qty"
@@ -53,12 +57,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/qty_keranjang"
+        android:layout_marginLeft="5dp"
         android:padding="5dp"
         android:text="Total" />
 
 
     <Button
-
         android:layout_centerInParent="true"
         android:layout_marginRight="10dp"
         android:id="@+id/button_edit_keranjang"
@@ -72,6 +76,7 @@
 
     <Button
         android:layout_centerInParent="true"
+        android:layout_marginRight="10dp"
         android:id="@+id/button_delete_keranjang"
         android:layout_width="wrap_content"
         android:textColor="@color/whiteBodyColor"

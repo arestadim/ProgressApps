@@ -114,12 +114,12 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
     }
 
     private void onDeleteData(int position){
-        mDb = AppDatabase.getDatabase(context);
-        final Kategori kategori = mKategoriList.get(position);
-        mDb.kategoriDao().delete(kategori);
-        kategoriFragment.retrieveData();
-        mKategoriList.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(position, mKategoriList.size());
+//        mDb = AppDatabase.getDatabase(context);
+//        final Kategori kategori = mKategoriList.get(position);
+//        mDb.kategoriDao().delete(kategori);
+//        kategoriFragment.retrieveData();
+//        mKategoriList.remove(position);
+//        notifyItemRemoved(position);
+//        notifyItemRangeChanged(position, mKategoriList.size());
     }
 }

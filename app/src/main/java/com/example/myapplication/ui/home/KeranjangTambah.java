@@ -22,6 +22,8 @@ public class KeranjangTambah extends AppCompatActivity {
     AppDatabase mDb;
     EditText mKuantiti;
     Button mSubmit;
+    Button bPlus;
+    Button bMin;
     TextView mNama;
     int mIdProduk;
     Intent intent;
@@ -33,6 +35,8 @@ public class KeranjangTambah extends AppCompatActivity {
         setContentView(R.layout.activity_keranjang_tambah);
         mDb = AppDatabase.getDatabase(getApplicationContext());
         intent = getIntent();
+        bPlus = findViewById(R.id.btnTambahKuantiti);
+        bMin = findViewById(R.id.btnKurangKuantiti);
         mIdProduk = intent.getIntExtra("insert",-1);
         mKuantiti = findViewById(R.id.etKuantitiTambah);
         mNama = findViewById(R.id.labelNamaProdukTambah);
@@ -44,6 +48,31 @@ public class KeranjangTambah extends AppCompatActivity {
                 onSubmit();
             }
         });
+        bPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(String.valueOf(mKuantiti.getText()));
+                if(jumlah == 0){
+                    jumlah = 1;
+                }else {
+                    jumlah = jumlah + 1;
+                }
+                mKuantiti.setText(String.valueOf(jumlah));
+            }
+        });
+        bMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int jumlah = Integer.parseInt(String.valueOf(mKuantiti.getText()));
+                if(jumlah == 0){
+                    jumlah = 0;
+                }else {
+                    jumlah = jumlah - 1;
+                }
+                mKuantiti.setText(String.valueOf(jumlah));
+            }
+        });
+
         produk = mDb.produkDao().loadProdukById(mIdProduk);
         mNama.setText(produk.produk.getNama_produk());
     }

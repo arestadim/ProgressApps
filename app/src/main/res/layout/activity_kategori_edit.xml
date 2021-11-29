@@ -18,13 +18,14 @@
         android:layout_below="@id/labelKategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/btnUpdateKategori"
-        android:layout_below="@+id/etKategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UPDATE"
-        android:textColor="#fff"
+        android:layout_below="@+id/etKategori"
+        android:background="@drawable/btnstyle"
         android:padding="10dp"
-        android:background="@drawable/btnstyle"/>
+        android:text="UPDATE"
+        android:textColor="#fff" />
 </RelativeLayout>
